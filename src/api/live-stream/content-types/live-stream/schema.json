@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "live_streams",
+  "info": {
+    "singularName": "live-stream",
+    "pluralName": "live-streams",
+    "displayName": "Live Stream",
+    "description": "Live streaming events and webinars"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "streamUrl": {
+      "type": "string"
+    },
+    "streamKey": {
+      "type": "string",
+      "private": true
+    },
+    "platform": {
+      "type": "enumeration",
+      "enum": ["youtube", "twitch", "zoom", "custom"]
+    },
+    "scheduledAt": {
+      "type": "datetime"
+    },
+    "duration": {
+      "type": "integer",
+      "min": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["upcoming", "live", "ended"],
+      "default": "upcoming"
+    },
+    "instructor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::instructor.instructor",
+      "inversedBy": "liveStreams"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course"
+    },
+    "recordingUrl": {
+      "type": "string"
+    },
+    "maxAttendees": {
+      "type": "integer",
+      "min": 0
+    },
+    "isPublic": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

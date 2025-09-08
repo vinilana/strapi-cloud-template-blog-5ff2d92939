@@ -1,0 +1,323 @@
+{
+  "instructors": [
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "bio": "Experienced web developer with over 10 years in the industry. Specializes in JavaScript, React, and Node.js.",
+      "title": "Senior Full Stack Developer"
+    },
+    {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "bio": "Data scientist and machine learning expert. PhD in Computer Science with focus on AI.",
+      "title": "AI/ML Engineer"
+    },
+    {
+      "name": "Mike Johnson",
+      "email": "mike.johnson@example.com",
+      "bio": "DevOps specialist with expertise in cloud platforms and containerization.",
+      "title": "DevOps Engineer"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Web Development",
+      "slug": "web-development",
+      "description": "Learn to build modern web applications"
+    },
+    {
+      "name": "Data Science",
+      "slug": "data-science",
+      "description": "Master data analysis and machine learning"
+    },
+    {
+      "name": "DevOps",
+      "slug": "devops",
+      "description": "Learn deployment, CI/CD, and cloud technologies"
+    },
+    {
+      "name": "Mobile Development",
+      "slug": "mobile-development",
+      "description": "Build native and cross-platform mobile apps"
+    }
+  ],
+  "tags": [
+    {
+      "name": "JavaScript",
+      "slug": "javascript"
+    },
+    {
+      "name": "Python",
+      "slug": "python"
+    },
+    {
+      "name": "React",
+      "slug": "react"
+    },
+    {
+      "name": "Node.js",
+      "slug": "nodejs"
+    },
+    {
+      "name": "Docker",
+      "slug": "docker"
+    },
+    {
+      "name": "Kubernetes",
+      "slug": "kubernetes"
+    },
+    {
+      "name": "Machine Learning",
+      "slug": "machine-learning"
+    },
+    {
+      "name": "Beginner Friendly",
+      "slug": "beginner-friendly"
+    }
+  ],
+  "courses": [
+    {
+      "title": "Complete JavaScript Mastery",
+      "description": "Master JavaScript from basics to advanced concepts. This comprehensive course covers everything you need to know about JavaScript, including ES6+, async programming, and modern best practices.",
+      "shortDescription": "Master JavaScript from basics to advanced concepts",
+      "duration": 40,
+      "level": "beginner",
+      "language": "English",
+      "status": "published",
+      "featured": true,
+      "introVideoUrl": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
+      "instructor": 0,
+      "category": 0,
+      "tags": [0, 3, 7]
+    },
+    {
+      "title": "React.js - The Complete Guide",
+      "description": "Build powerful, fast, user-friendly and reactive web apps with React.js. Includes Redux, React Router, and Next.js.",
+      "shortDescription": "Build modern web apps with React",
+      "duration": 50,
+      "level": "intermediate",
+      "language": "English",
+      "status": "published",
+      "featured": true,
+      "introVideoUrl": "https://www.youtube.com/watch?v=Ke90Tje7VS0",
+      "instructor": 0,
+      "category": 0,
+      "tags": [0, 2]
+    },
+    {
+      "title": "Python for Data Science",
+      "description": "Learn Python programming with a focus on data science applications. Cover NumPy, Pandas, Matplotlib, and Scikit-learn.",
+      "shortDescription": "Python programming for data science",
+      "duration": 35,
+      "level": "beginner",
+      "language": "English",
+      "status": "published",
+      "featured": false,
+      "introVideoUrl": "https://www.youtube.com/watch?v=_uQrJ0TkZlc",
+      "instructor": 1,
+      "category": 1,
+      "tags": [1, 6, 7]
+    },
+    {
+      "title": "Docker & Kubernetes Essentials",
+      "description": "Master containerization with Docker and orchestration with Kubernetes. Learn to deploy scalable applications.",
+      "shortDescription": "Container orchestration with Docker & Kubernetes",
+      "duration": 25,
+      "level": "intermediate",
+      "language": "English",
+      "status": "published",
+      "featured": false,
+      "introVideoUrl": "https://www.youtube.com/watch?v=3c-iBn73dDE",
+      "instructor": 2,
+      "category": 2,
+      "tags": [4, 5]
+    }
+  ],
+  "modules": [
+    {
+      "title": "JavaScript Fundamentals",
+      "description": "Learn the basics of JavaScript programming",
+      "order": 1,
+      "course": 0
+    },
+    {
+      "title": "Advanced JavaScript Concepts",
+      "description": "Deep dive into advanced JavaScript features",
+      "order": 2,
+      "course": 0
+    },
+    {
+      "title": "Asynchronous JavaScript",
+      "description": "Master callbacks, promises, and async/await",
+      "order": 3,
+      "course": 0
+    },
+    {
+      "title": "React Basics",
+      "description": "Introduction to React and JSX",
+      "order": 1,
+      "course": 1
+    },
+    {
+      "title": "State Management",
+      "description": "Managing state in React applications",
+      "order": 2,
+      "course": 1
+    },
+    {
+      "title": "Python Basics",
+      "description": "Introduction to Python programming",
+      "order": 1,
+      "course": 2
+    },
+    {
+      "title": "Data Analysis with Pandas",
+      "description": "Learn data manipulation with Pandas",
+      "order": 2,
+      "course": 2
+    },
+    {
+      "title": "Docker Fundamentals",
+      "description": "Getting started with Docker",
+      "order": 1,
+      "course": 3
+    },
+    {
+      "title": "Kubernetes Basics",
+      "description": "Introduction to Kubernetes",
+      "order": 2,
+      "course": 3
+    }
+  ],
+  "lessons": [
+    {
+      "title": "Introduction to JavaScript",
+      "description": "Your first steps with JavaScript",
+      "videoUrl": "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+      "content": "JavaScript is a versatile programming language that runs in browsers and on servers. In this lesson, we'll explore what JavaScript is, its history, and why it's important for modern web development.",
+      "duration": 15,
+      "order": 1,
+      "module": 0
+    },
+    {
+      "title": "Variables and Data Types",
+      "description": "Understanding JavaScript data types",
+      "videoUrl": "https://www.youtube.com/watch?v=9emXNzqCKyg",
+      "content": "Learn about different data types in JavaScript including strings, numbers, booleans, arrays, and objects. We'll also cover variable declaration with let, const, and var.",
+      "duration": 20,
+      "order": 2,
+      "module": 0
+    },
+    {
+      "title": "Functions in JavaScript",
+      "description": "Creating and using functions",
+      "videoUrl": "https://www.youtube.com/watch?v=N8ap4k_1QEQ",
+      "content": "Functions are the building blocks of JavaScript applications. Learn how to create functions, pass parameters, and return values.",
+      "duration": 25,
+      "order": 3,
+      "module": 0
+    },
+    {
+      "title": "Closures and Scope",
+      "description": "Understanding JavaScript closures",
+      "videoUrl": "https://www.youtube.com/watch?v=3a0I8ICfyJc",
+      "content": "Deep dive into one of JavaScript's most powerful features - closures. Understand scope, lexical environment, and practical applications.",
+      "duration": 30,
+      "order": 1,
+      "module": 1
+    },
+    {
+      "title": "Prototypes and Inheritance",
+      "description": "JavaScript's prototype chain",
+      "videoUrl": "https://www.youtube.com/watch?v=riDVvXZ_Kb4",
+      "content": "Learn how JavaScript implements object-oriented programming through prototypes and the prototype chain.",
+      "duration": 35,
+      "order": 2,
+      "module": 1
+    },
+    {
+      "title": "Promises Fundamentals",
+      "description": "Working with JavaScript Promises",
+      "videoUrl": "https://www.youtube.com/watch?v=DHvZLI7Db8E",
+      "content": "Understand how to work with asynchronous operations using Promises. Learn about resolve, reject, then, and catch.",
+      "duration": 25,
+      "order": 1,
+      "module": 2
+    },
+    {
+      "title": "Async/Await Pattern",
+      "description": "Modern asynchronous JavaScript",
+      "videoUrl": "https://www.youtube.com/watch?v=V_Kr9OSfDeU",
+      "content": "Learn the modern way to handle asynchronous operations in JavaScript using async/await syntax.",
+      "duration": 20,
+      "order": 2,
+      "module": 2
+    },
+    {
+      "title": "Introduction to React",
+      "description": "Getting started with React",
+      "videoUrl": "https://www.youtube.com/watch?v=Ke90Tje7VS0",
+      "content": "Learn what React is, why it's popular, and how to set up your first React application.",
+      "duration": 20,
+      "order": 1,
+      "module": 3
+    },
+    {
+      "title": "JSX and Components",
+      "description": "Building React components",
+      "videoUrl": "https://www.youtube.com/watch?v=GiyL4KFRNBA",
+      "content": "Understand JSX syntax and learn how to create functional and class components in React.",
+      "duration": 30,
+      "order": 2,
+      "module": 3
+    },
+    {
+      "title": "useState Hook",
+      "description": "Managing state with hooks",
+      "videoUrl": "https://www.youtube.com/watch?v=O6P86uwfdR0",
+      "content": "Learn how to manage component state using the useState hook in React.",
+      "duration": 25,
+      "order": 1,
+      "module": 4
+    }
+  ],
+  "liveStreams": [
+    {
+      "title": "JavaScript Q&A Session",
+      "description": "Live Q&A session about JavaScript fundamentals and advanced concepts. Bring your questions!",
+      "platform": "youtube",
+      "streamUrl": "https://youtube.com/live/example1",
+      "scheduledAt": "2024-02-01T18:00:00Z",
+      "duration": 60,
+      "status": "upcoming",
+      "isPublic": true,
+      "instructor": 0,
+      "course": 0
+    },
+    {
+      "title": "React Best Practices Workshop",
+      "description": "Interactive workshop on React best practices, performance optimization, and common pitfalls to avoid.",
+      "platform": "zoom",
+      "streamUrl": "https://zoom.us/j/example",
+      "scheduledAt": "2024-02-05T19:00:00Z",
+      "duration": 90,
+      "status": "upcoming",
+      "isPublic": true,
+      "maxAttendees": 100,
+      "instructor": 0,
+      "course": 1
+    },
+    {
+      "title": "Data Science Office Hours",
+      "description": "Weekly office hours for data science students. Get help with your projects and assignments.",
+      "platform": "youtube",
+      "streamUrl": "https://youtube.com/live/example2",
+      "scheduledAt": "2024-02-03T17:00:00Z",
+      "duration": 45,
+      "status": "upcoming",
+      "isPublic": true,
+      "instructor": 1,
+      "course": 2
+    }
+  ]
+}
