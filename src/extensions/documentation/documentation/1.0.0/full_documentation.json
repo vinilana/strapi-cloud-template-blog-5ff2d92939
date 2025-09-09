@@ -14,7 +14,7 @@
       "url": "https://opensource.org/licenses/MIT"
     },
     "termsOfService": "YOUR_TERMS_OF_SERVICE_URL",
-    "x-generation-date": "2025-09-09T16:20:38.757Z"
+    "x-generation-date": "2025-09-09T16:46:03.156Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -11725,6 +11725,9 @@
               "featured": {
                 "type": "boolean"
               },
+              "showOnlyAsFeatured": {
+                "type": "boolean"
+              },
               "order": {
                 "type": "integer"
               },
@@ -12612,6 +12615,9 @@
           "featured": {
             "type": "boolean"
           },
+          "showOnlyAsFeatured": {
+            "type": "boolean"
+          },
           "order": {
             "type": "integer"
           },
@@ -13072,6 +13078,9 @@
                       ]
                     },
                     "featured": {
+                      "type": "boolean"
+                    },
+                    "showOnlyAsFeatured": {
                       "type": "boolean"
                     },
                     "order": {
@@ -14945,6 +14954,9 @@
                   ]
                 },
                 "featured": {
+                  "type": "boolean"
+                },
+                "showOnlyAsFeatured": {
                   "type": "boolean"
                 },
                 "order": {
@@ -18198,6 +18210,9 @@
                 "featured": {
                   "type": "boolean"
                 },
+                "showOnlyAsFeatured": {
+                  "type": "boolean"
+                },
                 "order": {
                   "type": "integer"
                 },
@@ -20234,6 +20249,9 @@
                     ]
                   },
                   "featured": {
+                    "type": "boolean"
+                  },
+                  "showOnlyAsFeatured": {
                     "type": "boolean"
                   },
                   "order": {
@@ -22711,6 +22729,9 @@
                     "featured": {
                       "type": "boolean"
                     },
+                    "showOnlyAsFeatured": {
+                      "type": "boolean"
+                    },
                     "order": {
                       "type": "integer"
                     },
@@ -24569,6 +24590,9 @@
                 ]
               },
               "featured": {
+                "type": "boolean"
+              },
+              "showOnlyAsFeatured": {
                 "type": "boolean"
               },
               "order": {
@@ -26558,6 +26582,9 @@
                   ]
                 },
                 "featured": {
+                  "type": "boolean"
+                },
+                "showOnlyAsFeatured": {
                   "type": "boolean"
                 },
                 "order": {

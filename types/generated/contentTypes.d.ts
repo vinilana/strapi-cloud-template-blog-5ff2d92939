@@ -605,6 +605,8 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 200;
       }>;
+    showOnlyAsFeatured: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     slug: Schema.Attribute.UID<'title'>;
     status: Schema.Attribute.Enumeration<['draft', 'published']> &
       Schema.Attribute.DefaultTo<'draft'>;
