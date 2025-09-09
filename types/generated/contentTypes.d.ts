@@ -584,6 +584,14 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     modules: Schema.Attribute.Relation<'oneToMany', 'api::module.module'>;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
@@ -765,6 +773,14 @@ export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
         },
         number
       >;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
     platform: Schema.Attribute.Enumeration<
       ['youtube', 'twitch', 'zoom', 'custom']
     >;

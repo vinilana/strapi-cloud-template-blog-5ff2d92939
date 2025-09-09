@@ -73,6 +73,11 @@
     "isPublic": {
       "type": "boolean",
       "default": true
+    },
+    "order": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
     }
   }
 }

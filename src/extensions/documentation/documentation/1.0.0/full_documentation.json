@@ -14,7 +14,7 @@
       "url": "https://opensource.org/licenses/MIT"
     },
     "termsOfService": "YOUR_TERMS_OF_SERVICE_URL",
-    "x-generation-date": "2025-09-09T10:53:13.944Z"
+    "x-generation-date": "2025-09-09T15:25:58.588Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -11725,6 +11725,9 @@
               "featured": {
                 "type": "boolean"
               },
+              "order": {
+                "type": "integer"
+              },
               "instructor": {
                 "oneOf": [
                   {
@@ -12609,6 +12612,9 @@
           "featured": {
             "type": "boolean"
           },
+          "order": {
+            "type": "integer"
+          },
           "instructor": {
             "type": "object",
             "properties": {
@@ -13067,6 +13073,9 @@
                     },
                     "featured": {
                       "type": "boolean"
+                    },
+                    "order": {
+                      "type": "integer"
                     },
                     "instructor": {
                       "type": "object",
@@ -13826,6 +13835,9 @@
                     },
                     "isPublic": {
                       "type": "boolean"
+                    },
+                    "order": {
+                      "type": "integer"
                     },
                     "createdAt": {
                       "type": "string",
@@ -14926,6 +14938,9 @@
                 "featured": {
                   "type": "boolean"
                 },
+                "order": {
+                  "type": "integer"
+                },
                 "instructor": {
                   "type": "object",
                   "properties": {
@@ -15300,6 +15315,9 @@
                           },
                           "isPublic": {
                             "type": "boolean"
+                          },
+                          "order": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -18168,6 +18186,9 @@
                 "featured": {
                   "type": "boolean"
                 },
+                "order": {
+                  "type": "integer"
+                },
                 "instructor": {
                   "type": "object",
                   "properties": {
@@ -18542,6 +18563,9 @@
                           },
                           "isPublic": {
                             "type": "boolean"
+                          },
+                          "order": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
@@ -20197,6 +20221,9 @@
                   "featured": {
                     "type": "boolean"
                   },
+                  "order": {
+                    "type": "integer"
+                  },
                   "instructor": {
                     "type": "object",
                     "properties": {
@@ -20571,6 +20598,9 @@
                             },
                             "isPublic": {
                               "type": "boolean"
+                            },
+                            "order": {
+                              "type": "integer"
                             },
                             "createdAt": {
                               "type": "string",
@@ -21495,6 +21525,9 @@
               },
               "isPublic": {
                 "type": "boolean"
+              },
+              "order": {
+                "type": "integer"
               },
               "locale": {
                 "type": "string"
@@ -22660,6 +22693,9 @@
                     "featured": {
                       "type": "boolean"
                     },
+                    "order": {
+                      "type": "integer"
+                    },
                     "instructor": {
                       "type": "object",
                       "properties": {
@@ -23419,6 +23455,9 @@
                     "isPublic": {
                       "type": "boolean"
                     },
+                    "order": {
+                      "type": "integer"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -23545,6 +23584,9 @@
           },
           "isPublic": {
             "type": "boolean"
+          },
+          "order": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -24508,6 +24550,9 @@
               "featured": {
                 "type": "boolean"
               },
+              "order": {
+                "type": "integer"
+              },
               "instructor": {
                 "type": "object",
                 "properties": {
@@ -24882,6 +24927,9 @@
                         },
                         "isPublic": {
                           "type": "boolean"
+                        },
+                        "order": {
+                          "type": "integer"
                         },
                         "createdAt": {
                           "type": "string",
@@ -26488,6 +26536,9 @@
                 "featured": {
                   "type": "boolean"
                 },
+                "order": {
+                  "type": "integer"
+                },
                 "instructor": {
                   "type": "object",
                   "properties": {
@@ -26862,6 +26913,9 @@
                           },
                           "isPublic": {
                             "type": "boolean"
+                          },
+                          "order": {
+                            "type": "integer"
                           },
                           "createdAt": {
                             "type": "string",
