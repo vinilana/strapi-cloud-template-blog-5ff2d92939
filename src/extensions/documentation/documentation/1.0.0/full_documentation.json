@@ -14,7 +14,7 @@
       "url": "https://opensource.org/licenses/MIT"
     },
     "termsOfService": "YOUR_TERMS_OF_SERVICE_URL",
-    "x-generation-date": "2025-09-09T15:25:58.588Z"
+    "x-generation-date": "2025-09-09T16:20:38.757Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13106,6 +13106,9 @@
                         "description": {
                           "type": "string"
                         },
+                        "order": {
+                          "type": "integer"
+                        },
                         "courses": {
                           "type": "array",
                           "items": {
@@ -14070,6 +14073,9 @@
               "description": {
                 "type": "string"
               },
+              "order": {
+                "type": "integer"
+              },
               "courses": {
                 "type": "array",
                 "items": {
@@ -14160,6 +14166,9 @@
           },
           "description": {
             "type": "string"
+          },
+          "order": {
+            "type": "integer"
           },
           "courses": {
             "type": "array",
@@ -15443,6 +15452,9 @@
                     },
                     "description": {
                       "type": "string"
+                    },
+                    "order": {
+                      "type": "integer"
                     },
                     "courses": {
                       "type": "array",
@@ -18692,6 +18704,9 @@
                     "description": {
                       "type": "string"
                     },
+                    "order": {
+                      "type": "integer"
+                    },
                     "courses": {
                       "type": "array",
                       "items": {
@@ -20727,6 +20742,9 @@
                       "description": {
                         "type": "string"
                       },
+                      "order": {
+                        "type": "integer"
+                      },
                       "courses": {
                         "type": "array",
                         "items": {
@@ -22724,6 +22742,9 @@
                         },
                         "description": {
                           "type": "string"
+                        },
+                        "order": {
+                          "type": "integer"
                         },
                         "courses": {
                           "type": "array",
@@ -25056,6 +25077,9 @@
                   "description": {
                     "type": "string"
                   },
+                  "order": {
+                    "type": "integer"
+                  },
                   "courses": {
                     "type": "array",
                     "items": {
@@ -27041,6 +27065,9 @@
                     },
                     "description": {
                       "type": "string"
+                    },
+                    "order": {
+                      "type": "integer"
                     },
                     "courses": {
                       "type": "array",

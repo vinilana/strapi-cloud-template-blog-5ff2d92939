@@ -23,6 +23,11 @@
     "description": {
       "type": "text"
     },
+    "order": {
+      "type": "integer",
+      "min": 0,
+      "default": 1
+    },
     "courses": {
       "type": "relation",
       "relation": "oneToMany",

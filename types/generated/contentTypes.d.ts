@@ -531,6 +531,14 @@ export interface ApiCourseCategoryCourseCategory
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -591,7 +599,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
         },
         number
       > &
-      Schema.Attribute.DefaultTo<0>;
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     shortDescription: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
@@ -719,7 +727,7 @@ export interface ApiLessonLesson extends Struct.CollectionTypeSchema {
         },
         number
       > &
-      Schema.Attribute.DefaultTo<0>;
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     resources: Schema.Attribute.Media<'files' | 'images' | 'videos', true>;
     slug: Schema.Attribute.UID<'title'>;
@@ -780,7 +788,7 @@ export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
         },
         number
       > &
-      Schema.Attribute.DefaultTo<0>;
+      Schema.Attribute.DefaultTo<1>;
     platform: Schema.Attribute.Enumeration<
       ['youtube', 'twitch', 'zoom', 'custom']
     >;
@@ -831,7 +839,7 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
         },
         number
       > &
-      Schema.Attribute.DefaultTo<0>;
+      Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
