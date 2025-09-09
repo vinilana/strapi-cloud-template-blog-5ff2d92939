@@ -8,7 +8,7 @@ module.exports = createCoreController('api::live-stream.live-stream', ({ strapi 
     const entities = await strapi.service('api::live-stream.live-stream').find({
       filters: {
         scheduledAt: { $gte: now },
-        status: 'upcoming'
+        streamStatus: 'upcoming'
       },
       sort: 'scheduledAt:asc',
       populate: ['instructor', 'course', 'thumbnail']
@@ -20,7 +20,7 @@ module.exports = createCoreController('api::live-stream.live-stream', ({ strapi 
   
   async findLive(ctx) {
     const entities = await strapi.service('api::live-stream.live-stream').find({
-      filters: { status: 'live' },
+      filters: { streamStatus: 'live' },
       populate: ['instructor', 'course', 'thumbnail']
     });
     

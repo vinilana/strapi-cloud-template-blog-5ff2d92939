@@ -772,9 +772,9 @@ export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
     recordingUrl: Schema.Attribute.String;
     scheduledAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
-    status: Schema.Attribute.Enumeration<['upcoming', 'live', 'ended']> &
-      Schema.Attribute.DefaultTo<'upcoming'>;
     streamKey: Schema.Attribute.String & Schema.Attribute.Private;
+    streamStatus: Schema.Attribute.Enumeration<['upcoming', 'live', 'ended']> &
+      Schema.Attribute.DefaultTo<'upcoming'>;
     streamUrl: Schema.Attribute.String;
     thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;

@@ -14,7 +14,7 @@
       "url": "https://opensource.org/licenses/MIT"
     },
     "termsOfService": "YOUR_TERMS_OF_SERVICE_URL",
-    "x-generation-date": "2025-09-08T03:16:13.789Z"
+    "x-generation-date": "2025-09-09T10:53:13.944Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -13788,7 +13788,7 @@
                     "duration": {
                       "type": "integer"
                     },
-                    "status": {
+                    "streamStatus": {
                       "type": "string",
                       "enum": [
                         "upcoming",
@@ -15262,7 +15262,7 @@
                           "duration": {
                             "type": "integer"
                           },
-                          "status": {
+                          "streamStatus": {
                             "type": "string",
                             "enum": [
                               "upcoming",
@@ -18504,7 +18504,7 @@
                           "duration": {
                             "type": "integer"
                           },
-                          "status": {
+                          "streamStatus": {
                             "type": "string",
                             "enum": [
                               "upcoming",
@@ -20533,7 +20533,7 @@
                             "duration": {
                               "type": "integer"
                             },
-                            "status": {
+                            "streamStatus": {
                               "type": "string",
                               "enum": [
                                 "upcoming",
@@ -21457,7 +21457,7 @@
               "duration": {
                 "type": "integer"
               },
-              "status": {
+              "streamStatus": {
                 "type": "string",
                 "enum": [
                   "upcoming",
@@ -22193,7 +22193,7 @@
           "duration": {
             "type": "integer"
           },
-          "status": {
+          "streamStatus": {
             "type": "string",
             "enum": [
               "upcoming",
@@ -23380,7 +23380,7 @@
                     "duration": {
                       "type": "integer"
                     },
-                    "status": {
+                    "streamStatus": {
                       "type": "string",
                       "enum": [
                         "upcoming",
@@ -24844,7 +24844,7 @@
                         "duration": {
                           "type": "integer"
                         },
-                        "status": {
+                        "streamStatus": {
                           "type": "string",
                           "enum": [
                             "upcoming",
@@ -26824,7 +26824,7 @@
                           "duration": {
                             "type": "integer"
                           },
-                          "status": {
+                          "streamStatus": {
                             "type": "string",
                             "enum": [
                               "upcoming",

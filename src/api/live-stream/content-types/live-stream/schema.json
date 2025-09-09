@@ -47,7 +47,7 @@
       "type": "integer",
       "min": 0
     },
-    "status": {
+    "streamStatus": {
       "type": "enumeration",
       "enum": ["upcoming", "live", "ended"],
       "default": "upcoming"

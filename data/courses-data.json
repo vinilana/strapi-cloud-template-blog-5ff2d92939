@@ -289,7 +289,7 @@
       "streamUrl": "https://youtube.com/live/example1",
       "scheduledAt": "2024-02-01T18:00:00Z",
       "duration": 60,
-      "status": "upcoming",
+      "streamStatus": "upcoming",
       "isPublic": true,
       "instructor": 0,
       "course": 0
@@ -301,7 +301,7 @@
       "streamUrl": "https://zoom.us/j/example",
       "scheduledAt": "2024-02-05T19:00:00Z",
       "duration": 90,
-      "status": "upcoming",
+      "streamStatus": "upcoming",
       "isPublic": true,
       "maxAttendees": 100,
       "instructor": 0,
@@ -314,7 +314,7 @@
       "streamUrl": "https://youtube.com/live/example2",
       "scheduledAt": "2024-02-03T17:00:00Z",
       "duration": 45,
-      "status": "upcoming",
+      "streamStatus": "upcoming",
       "isPublic": true,
       "instructor": 1,
       "course": 2

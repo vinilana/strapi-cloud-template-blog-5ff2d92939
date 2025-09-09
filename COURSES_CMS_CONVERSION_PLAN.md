@@ -91,7 +91,7 @@ For live streaming events and webinars.
 - `platform` - enumeration (youtube, twitch, zoom, custom)
 - `scheduledAt` - datetime
 - `duration` - integer (estimated minutes)
-- `status` - enumeration (upcoming, live, ended)
+- `streamStatus` - enumeration (upcoming, live, ended)
 - `instructor` - relation (manyToOne with instructor)
 - `course` - relation (manyToOne with course, optional)
 - `recordingUrl` - string (post-stream recording)

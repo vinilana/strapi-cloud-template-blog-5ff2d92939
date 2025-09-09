@@ -178,7 +178,7 @@ async function importLiveStreams(instructorMap, courseMap) {
         streamUrl: stream.streamUrl,
         scheduledAt: stream.scheduledAt,
         duration: stream.duration,
-        status: stream.status,
+        streamStatus: stream.streamStatus,
         isPublic: stream.isPublic,
         maxAttendees: stream.maxAttendees,
         instructor: instructorMap[stream.instructor],
