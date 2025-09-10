@@ -1,0 +1,86 @@
+{
+  "liveStreams": [
+    {
+      "title": "Pair Programming Masterclass",
+      "description": "Weekly pair programming sessions where we solve real-world problems together",
+      "shortDescription": "Learn pair programming techniques with live coding sessions",
+      "platform": "youtube",
+      "recurrence": "weekly",
+      "dayOfWeek": "wednesday",
+      "timeOfDay": "14:00",
+      "duration": 120,
+      "liveStreamStatus": "active",
+      "isPublic": true,
+      "defaultMaxAttendees": 100,
+      "instructor": 0,
+      "course": null,
+      "tags": [0, 1],
+      "events": [
+        {
+          "title": "Pair Programming Masterclass - Building a REST API",
+          "description": "In this session, we'll build a complete REST API from scratch",
+          "scheduledAt": "2025-09-17T14:00:00Z",
+          "duration": 120,
+          "liveEventStatus": "upcoming",
+          "liveStreamUrl": "https://youtube.com/live/abc123",
+          "vodUrl": null,
+          "maxAttendees": 100,
+          "order": 1
+        },
+        {
+          "title": "Pair Programming Masterclass - React Component Testing",
+          "description": "Learn how to test React components using Jest and React Testing Library",
+          "scheduledAt": "2025-09-10T14:00:00Z",
+          "duration": 120,
+          "liveEventStatus": "ended",
+          "liveStreamUrl": null,
+          "vodUrl": "https://youtube.com/watch?v=xyz789",
+          "maxAttendees": 100,
+          "actualAttendees": 87,
+          "notes": "Great session with lots of engagement. Covered unit tests, integration tests, and E2E testing strategies.",
+          "order": 2
+        },
+        {
+          "title": "Pair Programming Masterclass - Database Optimization",
+          "description": "Optimizing database queries and schema design for better performance",
+          "scheduledAt": "2025-09-24T14:00:00Z",
+          "duration": 120,
+          "liveEventStatus": "upcoming",
+          "liveStreamUrl": "https://youtube.com/live/def456",
+          "vodUrl": null,
+          "maxAttendees": 100,
+          "order": 3
+        }
+      ]
+    },
+    {
+      "title": "System Design Office Hours",
+      "description": "Monthly Q&A sessions about system design and architecture",
+      "shortDescription": "Get your system design questions answered",
+      "platform": "zoom",
+      "recurrence": "monthly",
+      "dayOfWeek": "friday",
+      "timeOfDay": "16:00",
+      "duration": 90,
+      "liveStreamStatus": "active",
+      "isPublic": true,
+      "defaultMaxAttendees": 50,
+      "instructor": 1,
+      "course": 0,
+      "tags": [2],
+      "events": [
+        {
+          "title": "System Design Office Hours - September Edition",
+          "description": "This month we're focusing on microservices architecture",
+          "scheduledAt": "2025-09-27T16:00:00Z",
+          "duration": 90,
+          "liveEventStatus": "upcoming",
+          "liveStreamUrl": "https://zoom.us/j/123456789",
+          "vodUrl": null,
+          "maxAttendees": 50,
+          "order": 1
+        }
+      ]
+    }
+  ]
+}

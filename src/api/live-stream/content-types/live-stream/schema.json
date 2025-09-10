@@ -5,7 +5,7 @@
     "singularName": "live-stream",
     "pluralName": "live-streams",
     "displayName": "Live Stream",
-    "description": "Live streaming events and webinars"
+    "description": "Live stream series/masterclass (e.g., weekly Pair Programming sessions)"
   },
   "options": {
     "draftAndPublish": true
@@ -29,28 +29,40 @@
       "required": false,
       "allowedTypes": ["images"]
     },
-    "streamUrl": {
-      "type": "string"
-    },
-    "streamKey": {
-      "type": "string",
-      "private": true
+    "shortDescription": {
+      "type": "text",
+      "maxLength": 200
     },
     "platform": {
       "type": "enumeration",
       "enum": ["youtube", "twitch", "zoom", "custom"]
     },
-    "scheduledAt": {
-      "type": "datetime"
+    "recurrence": {
+      "type": "enumeration",
+      "enum": ["none", "daily", "weekly", "biweekly", "monthly"],
+      "default": "none"
+    },
+    "dayOfWeek": {
+      "type": "enumeration",
+      "enum": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    },
+    "timeOfDay": {
+      "type": "string"
     },
     "duration": {
       "type": "integer",
       "min": 0
     },
-    "streamStatus": {
+    "liveStreamStatus": {
       "type": "enumeration",
-      "enum": ["upcoming", "live", "ended"],
-      "default": "upcoming"
+      "enum": ["active", "paused", "completed"],
+      "default": "active"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::live-stream-event.live-stream-event",
+      "mappedBy": "liveStream"
     },
     "instructor": {
       "type": "relation",
@@ -63,12 +75,14 @@
       "relation": "manyToOne",
       "target": "api::course.course"
     },
-    "recordingUrl": {
-      "type": "string"
-    },
-    "maxAttendees": {
+    "defaultMaxAttendees": {
       "type": "integer",
       "min": 0
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag"
     },
     "isPublic": {
       "type": "boolean",

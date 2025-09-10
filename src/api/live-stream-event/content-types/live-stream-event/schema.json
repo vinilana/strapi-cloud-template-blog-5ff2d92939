@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "live_stream_events",
+  "info": {
+    "singularName": "live-stream-event",
+    "pluralName": "live-stream-events",
+    "displayName": "Live Stream Event",
+    "description": "Individual events/sessions for a live stream series"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "scheduledAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "duration": {
+      "type": "integer",
+      "min": 0
+    },
+    "liveEventStatus": {
+      "type": "enumeration",
+      "enum": ["upcoming", "live", "ended"],
+      "default": "upcoming"
+    },
+    "liveStreamUrl": {
+      "type": "string"
+    },
+    "vodUrl": {
+      "type": "string"
+    },
+    "streamKey": {
+      "type": "string",
+      "private": true
+    },
+    "resources": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["files", "images", "videos"]
+    },
+    "liveStream": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::live-stream.live-stream",
+      "inversedBy": "events"
+    },
+    "maxAttendees": {
+      "type": "integer",
+      "min": 0
+    },
+    "actualAttendees": {
+      "type": "integer",
+      "min": 0
+    },
+    "notes": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer",
+      "min": 0,
+      "default": 1
+    }
+  }
+}

@@ -741,10 +741,84 @@ export interface ApiLessonLesson extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLiveStreamEventLiveStreamEvent
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'live_stream_events';
+  info: {
+    description: 'Individual events/sessions for a live stream series';
+    displayName: 'Live Stream Event';
+    pluralName: 'live-stream-events';
+    singularName: 'live-stream-event';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    actualAttendees: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    duration: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    liveEventStatus: Schema.Attribute.Enumeration<
+      ['upcoming', 'live', 'ended']
+    > &
+      Schema.Attribute.DefaultTo<'upcoming'>;
+    liveStream: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::live-stream.live-stream'
+    >;
+    liveStreamUrl: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::live-stream-event.live-stream-event'
+    > &
+      Schema.Attribute.Private;
+    maxAttendees: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+    notes: Schema.Attribute.Text;
+    order: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<1>;
+    publishedAt: Schema.Attribute.DateTime;
+    resources: Schema.Attribute.Media<'files' | 'images' | 'videos', true>;
+    scheduledAt: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    streamKey: Schema.Attribute.String & Schema.Attribute.Private;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vodUrl: Schema.Attribute.String;
+  };
+}
+
 export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
   collectionName: 'live_streams';
   info: {
-    description: 'Live streaming events and webinars';
+    description: 'Live stream series/masterclass (e.g., weekly Pair Programming sessions)';
     displayName: 'Live Stream';
     pluralName: 'live-streams';
     singularName: 'live-stream';
@@ -757,6 +831,24 @@ export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    dayOfWeek: Schema.Attribute.Enumeration<
+      [
+        'monday',
+        'tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+      ]
+    >;
+    defaultMaxAttendees: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
     description: Schema.Attribute.RichText;
     duration: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
@@ -765,24 +857,25 @@ export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
         },
         number
       >;
+    events: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::live-stream-event.live-stream-event'
+    >;
     instructor: Schema.Attribute.Relation<
       'manyToOne',
       'api::instructor.instructor'
     >;
     isPublic: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    liveStreamStatus: Schema.Attribute.Enumeration<
+      ['active', 'paused', 'completed']
+    > &
+      Schema.Attribute.DefaultTo<'active'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::live-stream.live-stream'
     > &
       Schema.Attribute.Private;
-    maxAttendees: Schema.Attribute.Integer &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 0;
-        },
-        number
-      >;
     order: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
@@ -795,14 +888,18 @@ export interface ApiLiveStreamLiveStream extends Struct.CollectionTypeSchema {
       ['youtube', 'twitch', 'zoom', 'custom']
     >;
     publishedAt: Schema.Attribute.DateTime;
-    recordingUrl: Schema.Attribute.String;
-    scheduledAt: Schema.Attribute.DateTime;
+    recurrence: Schema.Attribute.Enumeration<
+      ['none', 'daily', 'weekly', 'biweekly', 'monthly']
+    > &
+      Schema.Attribute.DefaultTo<'none'>;
+    shortDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
     slug: Schema.Attribute.UID<'title'>;
-    streamKey: Schema.Attribute.String & Schema.Attribute.Private;
-    streamStatus: Schema.Attribute.Enumeration<['upcoming', 'live', 'ended']> &
-      Schema.Attribute.DefaultTo<'upcoming'>;
-    streamUrl: Schema.Attribute.String;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
     thumbnail: Schema.Attribute.Media<'images'>;
+    timeOfDay: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1396,6 +1493,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::instructor.instructor': ApiInstructorInstructor;
       'api::lesson.lesson': ApiLessonLesson;
+      'api::live-stream-event.live-stream-event': ApiLiveStreamEventLiveStreamEvent;
       'api::live-stream.live-stream': ApiLiveStreamLiveStream;
       'api::module.module': ApiModuleModule;
       'api::tag.tag': ApiTagTag;

@@ -168,25 +168,61 @@ async function importLessons(moduleMap) {
   }
 }
 
-async function importLiveStreams(instructorMap, courseMap) {
-  for (const stream of liveStreams) {
-    await strapi.documents('api::live-stream.live-stream').create({
+async function importLiveStreams(instructorMap, courseMap, tagMap) {
+  const liveStreamMap = {};
+  
+  // Import live streams (masterclasses/series)
+  for (let i = 0; i < liveStreams.length; i++) {
+    const stream = liveStreams[i];
+    const streamTags = stream.tags ? stream.tags.map(tagIndex => tagMap[tagIndex]) : [];
+    
+    const created = await strapi.documents('api::live-stream.live-stream').create({
       data: {
         title: stream.title,
         description: stream.description,
+        shortDescription: stream.shortDescription,
         platform: stream.platform,
-        streamUrl: stream.streamUrl,
-        scheduledAt: stream.scheduledAt,
+        recurrence: stream.recurrence || 'none',
+        dayOfWeek: stream.dayOfWeek,
+        timeOfDay: stream.timeOfDay,
         duration: stream.duration,
-        streamStatus: stream.streamStatus,
-        isPublic: stream.isPublic,
-        maxAttendees: stream.maxAttendees,
+        liveStreamStatus: stream.liveStreamStatus || 'active',
+        isPublic: stream.isPublic !== undefined ? stream.isPublic : true,
+        defaultMaxAttendees: stream.maxAttendees,
         instructor: instructorMap[stream.instructor],
         course: stream.course !== undefined ? courseMap[stream.course] : null,
+        tags: streamTags,
       },
       status: 'published',
     });
+    
+    liveStreamMap[i] = created.documentId;
+    
+    // Import events for this live stream if they exist
+    if (stream.events && Array.isArray(stream.events)) {
+      for (const event of stream.events) {
+        await strapi.documents('api::live-stream-event.live-stream-event').create({
+          data: {
+            title: event.title || `${stream.title} - Session`,
+            description: event.description,
+            scheduledAt: event.scheduledAt,
+            duration: event.duration || stream.duration,
+            liveEventStatus: event.liveEventStatus || 'upcoming',
+            liveStreamUrl: event.liveStreamUrl,
+            vodUrl: event.vodUrl,
+            maxAttendees: event.maxAttendees || stream.maxAttendees,
+            actualAttendees: event.actualAttendees,
+            notes: event.notes,
+            liveStream: created.documentId,
+            order: event.order || 1,
+          },
+          status: 'published',
+        });
+      }
+    }
   }
+  
+  return liveStreamMap;
 }
 
 async function importSeedData() {
@@ -198,7 +234,8 @@ async function importSeedData() {
     instructor: ['find', 'findOne'],
     'course-category': ['find', 'findOne'],
     tag: ['find', 'findOne'],
-    'live-stream': ['find', 'findOne']
+    'live-stream': ['find', 'findOne'],
+    'live-stream-event': ['find', 'findOne']
   });
 
   // Import data in order (respecting relationships)
@@ -221,7 +258,7 @@ async function importSeedData() {
   await importLessons(moduleMap);
   
   console.log('Importing live streams...');
-  await importLiveStreams(instructorMap, courseMap);
+  await importLiveStreams(instructorMap, courseMap, tagMap);
   
   console.log('All course data imported successfully!');
 }
